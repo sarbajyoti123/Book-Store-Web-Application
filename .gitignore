@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/testingGithub/.vs/testingGithub
+/testingGithub/testingGithub/bin/Debug/netcoreapp3.1
+/testingGithub/testingGithub/obj
