@@ -1,0 +1,41 @@
+﻿<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="~/images/Facebooklogo.png" width="50" height="30" asp-append-version = "true" />
+                    Facebook Store
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav">
+                        <partial name = "_LoginInfo" />
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/home/aboutus">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/home/contactus">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/book/getallbooks">Book List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller = "book" asp-action = "AddBook">Add Book</a>
+                        </li>
+
+                        
+
+                        
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>

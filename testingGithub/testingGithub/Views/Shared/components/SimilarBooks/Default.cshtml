@@ -1,0 +1,8 @@
+﻿@model IEnumerable<BookModel> 
+
+@foreach(var book in Model)
+{
+    <div class="col-md-4">
+                <partial name = "_BookThumbnail" model = "book" />
+            </div>
+}

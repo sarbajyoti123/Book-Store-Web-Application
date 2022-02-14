@@ -74,7 +74,17 @@ namespace testingGithub.Models
         [NotMapped]
         public IFormFileCollection GalleryFiles { get; set; }
 
+
+
+        [NotMapped]
+        public IFormFile PDFFile { get; set; }
+
+        public string PDFURL { get; set; }
+
         public List<GalleryModel> Gallery { get; set; } 
+
+
+        public string Useridbookss { get; set; }
 
 
 

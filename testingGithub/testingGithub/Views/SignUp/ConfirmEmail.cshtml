@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "ConfirmEmail";
+    Layout = "~/Views/Shared/_HomeView.cshtml";
+}
+
+
+
+@if(ViewBag.isSuccess == true)
+{
+    <div class = "alert alert-success" role = "alert">
+        <p>Congratulations! Now you can access the Website || Token Validated!</p>
+    </div>
+}
+else
+{
+    <div class = "alert alert-success" role = "alert">
+        <p>Somwthing Went Wrong OR Token Expired!</p>
+    </div>
+}
+

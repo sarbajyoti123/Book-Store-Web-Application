@@ -28,7 +28,12 @@ namespace testingGithub.Data
 
         public DateTime? UpdatedOn { get; set; }
 
-        public ICollection<BookGalery> bookGaleries { get; set; }
+
+        public string PDFUrl { get; set; }
+
+        public ICollection<BookGalery> BookGalery { get; set; }
+
+        public string Useridbook { get; set; }
         
 
     }
