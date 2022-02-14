@@ -1,0 +1,62 @@
+﻿@model BookModel;
+@{
+    ViewData["Title"] = "EditBook";
+    Layout = "~/Views/Shared/_HomeView.cshtml";
+}
+
+<h1>EditBook</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditBook" method = "post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Id"  />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title"  class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author"  class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description"  class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category"  class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPages" class="control-label"></label>
+                <input asp-for="TotalPages"  class="form-control" />
+                <span asp-validation-for="TotalPages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Language" class="control-label"></label>
+                <select asp-for = "Language" asp-items = "ViewBag.lang" required>
+                    <option value = "">Please Select a Language</option>
+                </select>
+                <span asp-validation-for="Language" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success"  />
+                <a class = "btn btn-primary" asp-controller = "Book" asp-action = "GetAllBooks" >Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+

@@ -1,0 +1,21 @@
+﻿
+@model BookModel;
+@{
+    ViewData["Title"] = "DeleteBook";
+    Layout = "~/Views/Shared/_HomeView.cshtml";
+}
+
+
+
+
+<form method = "post" asp-controller = "book" asp-action = "DeleteBook">
+    <h1>Are you sure to delete the book? </h1>
+    <input asp-for = "Id" value = "@ViewBag.deleteid" readonly />
+    <input type = "submit" value = "Delete" class = "btn btn-danger" />
+    @*<input type = "button" value = "Cancel" asp-controller = "Book" asp-action = "GetAllBooks"  class = "brn btn-primary" />*@
+    <a class = "btn btn-primary" asp-controller = "Book" asp-action = "GetAllBooks" >Cancel</a>
+
+
+    
+</form>
+

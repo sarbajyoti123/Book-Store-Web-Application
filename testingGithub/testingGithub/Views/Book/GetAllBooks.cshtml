@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<BookModel>;
+
+@{
+    ViewData["Title"] = "GetAllBooks";
+
+}
+
+@{
+
+    var dataas = new Dictionary<string, string>()
+            {
+                {"id", "sagar"},
+                {"name", "Mallik"}
+            };
+
+}
+
+
+<div class = "container" >
+    <h3 class = "display-4"> All books</h3>
+    <div class = "row">
+
+
+        @foreach (var book in Model)
+       {
+           <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src = "@book.CoverImageUrl" class = "img-thumbnail" />
+                <div class="card-body">
+                    <h3 class = "card-title">@book.Title</h3>
+                    <p class="card-text">@book.Description</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+
+                            @*Hard coded URL*@
+
+                            @*<a href="/book/getbook/@book.Id" class="btn btn-sm btn-outline-secondary">View details</a>*@
+                            
+                            @*Anchor Tag Helper*@
+
+                            @*<a asp-controller = "book" asp-action = "getbook" asp-all-route-data = "@dataas" class="btn btn-sm btn-outline-secondary">View details</a>*@
+
+
+                            @*<a asp-controller = "book" asp-action = "getbook" asp-route-id = "@book.Id" class="btn btn-sm btn-outline-secondary">View details</a>*@
+
+
+                            <a asp-route = "bookDetailRoute" asp-route-id = "@book.Id" class="btn btn-sm btn-outline-secondary">View details</a>
+
+
+                        </div>
+                        <small class="text-muted">@book.Author</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       }
+</div>
+</div>
+
+

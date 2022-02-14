@@ -1,0 +1,165 @@
+﻿
+@model BookModel;
+
+
+@{
+    ViewData["Title"] = "AddBook";
+    
+}
+
+<div class = "container">
+
+    <h3 class = "display-4">Add New Book</h3>
+    <div class = "form-group">
+        @if(ViewBag.issuccess == true)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Congratulations!</strong> Book Data Stored Successfully, <a asp-controller = "Book" asp-action = "GetBook" asp-route-id = "@ViewBag.Id" >Click</a> to See Data
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        }
+
+
+        @*Spinner for ajax*@
+        @*<div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status" id = "loader" style = "display:none" >
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+*@
+
+        
+        @*<form method = "post" asp-controller = "Book" asp-action = "AddBook" data-ajax=true data-ajax-begin = "beginajax" data-ajax-complete = "completeajax" data-ajax-success = "successajax" data-ajax-failure = "failureajax" data-ajax-loading = "#loader">*@
+        <form method = "post" asp-controller = "Book" asp-action = "AddBook" enctype = "multipart/form-data">
+            <div class = "form-group">
+                <label asp-for = "Title">Title</label>
+                <input asp-for = "Title" class = "form-control" />
+                <span asp-validation-for = "Title"></span>
+            </div>
+            
+            <div class = "form-group">
+                <label asp-for = "Author">Author</label>
+                <input asp-for = "Author" class = "form-control"/>
+                <span asp-validation-for = "Author"></span>
+            </div>
+
+            <div class = "form-group">
+                
+                <label asp-for = "Description">Description</label>
+                <input asp-for = "Description" class = "form-control"/>
+                <span asp-validation-for = "Description"></span>
+            </div>
+
+            <div class = "form-group">
+                <label asp-for = "Category">Category</label>
+                <input asp-for = "Category" class = "form-control"/>
+                <span asp-validation-for = "Category"></span>
+            </div>
+            
+            <div class = "form-group">
+                 <label asp-for = "TotalPages">TotalPages</label>
+                <input asp-for = "TotalPages" class = "form-control" required/>
+                <span asp-validation-for = "TotalPages"></span>
+            </div>
+
+           
+            @*Client Side Dropdown*@
+            @*<div class = "form-group">
+                 <label asp-for = "Language">Language</label>
+                <select asp-for = "Language" class = "form-control" required>
+                    <option value = "">Please Choose Language</option>
+                    <option>English</option>
+                    <option>Bengali</option>
+                    <option>Hindi</option>
+                </select>
+                <span asp-validation-for = "Language"></span>
+            </div>*@
+
+            <div class = "form-group">
+                 <label asp-for = "Language">Language</label>
+                <select asp-for = "Language" class = "form-control" required asp-items = "ViewBag.items" >
+                    <option value = "">Please Choose Language</option>
+                    
+                </select>
+                <span asp-validation-for = "Language"></span>
+            </div>
+
+
+             <div class = "form-group">
+                 <label asp-for = "CoverPhoto">Cover Photo</label>                
+                 <div class="custom-file">
+                  <input asp-for = "CoverPhoto" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+
+                <span asp-validation-for = "CoverPhoto"></span>
+            </div>
+
+            
+
+            <div class = "form-group">
+                 <label asp-for = "GalleryFiles">Gallery Files</label>                
+                 <div class="custom-file">
+                  <input asp-for = "GalleryFiles" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+
+                <span asp-validation-for = "GalleryFiles"></span>
+            </div>
+
+
+            @*<div class = "form-group">
+                 <label asp-for = "MultiLanguage">MultiLanguage</label>
+                <select asp-for = "MultiLanguage" class = "form-control" required asp-items = "ViewBag.data" multiple>
+                    <option value = "">Please Choose Language</option>
+                    
+                </select>
+                <span asp-validation-for = "MultiLanguage"></span>
+            </div>*@
+
+
+
+            <div class = "form-group">
+                <input type = "submit" value = "Submit Data" class = "btn btn-primary"/>
+            </div>
+
+            <br /><br />
+            <br />
+            <br />
+           
+
+            
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+@*@section script{
+    <script>
+
+        function completeajax(){
+            alert("Complete ajax");
+        }
+
+        function beginajax(){
+            alert("ajax started");
+        }
+
+        function successajax(){
+            alert("ajax success");
+        }
+
+        function failureajax(){
+            alert("ajax failure");
+        }
+
+
+    </script>
+}*@
+
