@@ -16,7 +16,7 @@ namespace testingGithub.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server = DESKTOP-ACMKVB0\CAPGEMINI;Database = BookFacebook; User ID = sagar; Password = sagar@12345");
+            optionsBuilder.UseSqlServer(@"server = DESKTOP-ACMKVB0\test;Database = BookFacebook; User ID = sagar; Password = sagar@12345");
             base.OnConfiguring(optionsBuilder);
         }
 
